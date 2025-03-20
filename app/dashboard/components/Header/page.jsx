@@ -1,9 +1,10 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
 import { useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
-const Header = () => {
+const Header = ({ toggleSidebar, isSidebarOpen }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const router = useRouter();
 
@@ -13,8 +14,14 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 dark:text-white shadow-md p-4 flex justify-between items-center md:px-6">
+    <header className="bg-black dark:bg-black dark:text-white shadow-md p-4 flex justify-between items-center md:px-6">
+      {/* Sidebar Toggle Icon on the Left */}
+      <button onClick={toggleSidebar} className="text-gray-600 dark:text-white text-xl">
+        {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
       <h1 className="text-xl font-bold">Dashboard</h1>
+
       <div className="flex items-center gap-4">
         <button
           onClick={toggleTheme}

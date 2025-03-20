@@ -126,7 +126,7 @@ const Table = ({ initialPosts }) => {
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
-    <div className="bg-white dark:bg-gray-800 dark:text-white p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-black dark:text-white p-6 rounded-lg shadow-md">
       <SearchFilter onSearch={handleSearch} />
       {loading ? (
         <LoadingSpinner />
