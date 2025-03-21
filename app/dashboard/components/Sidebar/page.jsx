@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { X, LayoutDashboard, Settings, User, LogOut, Menu, ChevronRight } from "lucide-react";
+import { X, LayoutDashboard, Settings, User, LogOut, Menu, ChevronRight, Grid } from "lucide-react";
 import jwt from "jsonwebtoken";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -44,17 +44,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       )}
 
       <aside
-        className={`fixed top-0 left-0 w-72 bg-gray-900 h-screen z-30 transform ${
+        className={`fixed top-0 left-0 w-72 bg-zinc-900 h-screen z-30 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out shadow-xl flex flex-col`}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-800">
           <div className="flex items-center space-x-3">
-            <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
+            {/* <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
               <span className="text-white font-bold text-lg">DB</span>
-            </div>
-            <h1 className="text-white font-bold text-xl">Dashboard</h1>
+            </div> */}
+            <Grid size={18} className="mr-3 text-red-500" />
+            <h1 className="text-white font-bold ">Admin Panel</h1>
           </div>
           <button 
             onClick={toggleSidebar} 
@@ -67,7 +68,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
         {/* Nav Links */}
         <nav className="flex-1 py-6 px-4 overflow-y-auto">
-          <div className="mb-2 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+          <div className="mb-2 px-4 text-xs font-semibold text-red-500 uppercase tracking-wider">
             Main
           </div>
           <ul className="space-y-1">
@@ -79,9 +80,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 }`}
                 onClick={() => setActiveItem("Dashboard")}
               >
-                <LayoutDashboard size={18} className="mr-3" />
+                <LayoutDashboard size={18} className="mr-3 text-red-500" />
                 <span>Dashboard</span>
-                <ChevronRight size={16} className="ml-auto text-gray-600" />
+                <ChevronRight size={16} className="ml-auto text-red-500" />
               </Link>
             </li>
             <li>
@@ -92,9 +93,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 }`}
                 onClick={() => setActiveItem("Settings")}
               >
-                <Settings size={18} className="mr-3" />
+                <Settings size={18} className="mr-3 text-red-500" />
                 <span>Settings</span>
-                <ChevronRight size={16} className="ml-auto text-gray-600" />
+                <ChevronRight size={16} className="ml-auto text-red-500" />
               </Link>
             </li>
             <li>
@@ -105,9 +106,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 }`}
                 onClick={() => setActiveItem("Profile")}
               >
-                <User size={18} className="mr-3" />
+                <User size={18} className="mr-3 text-red-500" />
                 <span>Profile</span>
-                <ChevronRight size={16} className="ml-auto text-gray-600" />
+                <ChevronRight size={16} className="ml-auto text-red-500" />
               </Link>
             </li>
           </ul>

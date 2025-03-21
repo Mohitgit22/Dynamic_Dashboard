@@ -130,7 +130,7 @@ const PostsTable = ({ initialPosts }) => {
                       Title {getSortIcon('title')}
                     </div>
                   </TableHead>
-                  <TableHead className="w-[100px] text-right">Actions</TableHead>
+                  {/* <TableHead className="w-[100px] text-right">Actions</TableHead> */}
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -143,11 +143,11 @@ const PostsTable = ({ initialPosts }) => {
                       <TableCell className="max-w-md truncate" title={post.title}>
                         {post.title}
                       </TableCell>
-                      <TableCell className="text-right">
+                      {/* <TableCell className="text-right">
                         <Button size="sm" variant="ghost" className="h-8 w-8 p-0">
                           <Eye className="h-4 w-4" />
                         </Button>
-                      </TableCell>
+                      </TableCell> */}
                     </TableRow>
                   ))
                 ) : (
@@ -179,3 +179,8 @@ const PostsTable = ({ initialPosts }) => {
 };
 
 export default PostsTable;
+
+
+
+
+
