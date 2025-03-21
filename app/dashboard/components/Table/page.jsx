@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -13,14 +12,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronUp, Filter, RefreshCw, Eye } from "lucide-react";
+import { ChevronDown, ChevronUp, RefreshCw } from "lucide-react";
 import Pagination from "../Pagination/page";
 import SearchFilter from "../SearchFilter/page";
 import LoadingSpinner from "../LoadingSpinner/page";
 
 const PostsTable = ({ initialPosts }) => {
-  const [posts, setPosts] = useState(initialPosts);
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState(initialPosts || []);
+  const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [sortConfig, setSortConfig] = useState({ key: 'id', direction: 'ascending' });
@@ -49,7 +48,7 @@ const PostsTable = ({ initialPosts }) => {
   };
 
   const sortedPosts = React.useMemo(() => {
-    const sortablePosts = [...filteredPosts];
+    const sortablePosts = [...(filteredPosts || [])];
     if (sortConfig.key) {
       sortablePosts.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
