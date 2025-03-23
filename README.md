@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dynamic Dashboard
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally on your system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+Make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (Recommended version: 18+)
+- [Git](https://git-scm.com/)
+- [PostgreSQL](https://www.postgresql.org/) (or use the provided database connection)
+- [Prisma](https://www.prisma.io/)
+
+### Installation Steps
+
+#### 1. Clone the repository
+```sh
+git clone https://github.com/Mohitgit22/Dynamic_Dashboard.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 2. Navigate to the project directory
+```sh
+cd Dynamic_Dashboard
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+#### 3. Install dependencies
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 4. Set up environment variables
+Create a `.env` file in the root of the project and add the following:
+```sh
+DATABASE_URL="postgresql://postgresql_owner:npg_fQk7xjMqed8b@ep-square-rain-a5x2ashh-pooler.us-east-2.aws.neon.tech/postgresql?sslmode=require"
+NEXT_PUBLIC_JWT_SECRET="mohit"
+```
 
-## Learn More
+#### 5. Generate Prisma client and migrate database
+```sh
+npx prisma generate
+npx prisma migrate dev --name init
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### 6. Run the development server
+```sh
+npm run dev
+```
+The application will be available at `http://localhost:3000/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Other Useful Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Build the application
+```sh
+npm run build
+```
 
-## Deploy on Vercel
+#### Start the application in production mode
+```sh
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Lint the code
+```sh
+npm run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Contributing
+Feel free to fork the repository and submit pull requests.
+
+### License
+This project is licensed under the MIT License.
+
