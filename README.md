@@ -48,26 +48,4 @@ npm run dev
 ```
 The application will be available at `http://localhost:3000/`.
 
-### Other Useful Commands
-
-#### Build the application
-```sh
-npm run build
-```
-
-#### Start the application in production mode
-```sh
-npm run start
-```
-
-#### Lint the code
-```sh
-npm run lint
-```
-
-### Contributing
-Feel free to fork the repository and submit pull requests.
-
-### License
-This project is licensed under the MIT License.
 
