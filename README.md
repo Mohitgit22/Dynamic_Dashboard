@@ -49,3 +49,11 @@ npm run dev
 The application will be available at `http://localhost:3000/`.
 
 
+
+### Deployed Link
+The project is deployed and can be accessed at:
+[Dynamic Dashboard](https://dynamic-dashboard-ashen.vercel.app/auth/login)
+
+
+
+
