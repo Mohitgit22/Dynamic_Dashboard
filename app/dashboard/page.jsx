@@ -9,7 +9,7 @@ const DashboardPage = async () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-full">
       <h1 className="text-2xl font-bold mb-6 text-white text-center">Content of API </h1>
       <PostsTable initialPosts={posts} />
     </div>

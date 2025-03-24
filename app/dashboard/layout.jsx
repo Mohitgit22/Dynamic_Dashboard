@@ -22,7 +22,7 @@ const DashboardLayout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex">
+    <div className=" bg-gray-900 flex overflow-x-auto">
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
@@ -43,3 +43,5 @@ const DashboardLayout = ({ children }) => {
 };
 
 export default DashboardLayout;
+
+
