@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from 'react';
 import { Search, X } from 'lucide-react';
@@ -5,7 +6,8 @@ import { Search, X } from 'lucide-react';
 const SearchFilter = ({ 
   onSearch, 
   placeholder = "Search by title or ID...",
-  className = ""
+  className = "",
+  isLoading = false
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
@@ -27,7 +29,11 @@ const SearchFilter = ({
     <div className={`mb-4 ${className}`}>
       <div className={`flex items-center relative bg-white dark:bg-gray-800 border ${isFocused ? 'border-blue-500 ring-2 ring-blue-100 dark:ring-blue-900/30' : 'border-gray-300 dark:border-gray-700'} rounded-lg`}>
         <div className="flex items-center justify-center pl-3">
-          <Search size={18} className="text-gray-500 dark:text-gray-400" />
+          {isLoading ? (
+            <div className="animate-spin h-4 w-4 border-2 border-gray-500 border-t-transparent rounded-full"></div>
+          ) : (
+            <Search size={18} className="text-gray-500 dark:text-gray-400" />
+          )}
         </div>
         
         <input
